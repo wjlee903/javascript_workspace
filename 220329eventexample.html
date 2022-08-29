@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event 처리 정리</title>
+    <!-- JQuery cdn code title 밑에 작성 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        function fnc1() {
+            console.log("btn1");
+        }
+        // 위부터 순서대로 처리하다보니 현재시점에는 btn2가 생성되지 않은걸로 판명 에러메시지
+        // document.getElementById("btn2").onclick = function () {
+        //     console.log("btn2");
+        // };
+
+        // javascript방법 - 모두 로딩이 된다음 실행하는 방법
+        window.onload = function () {
+            document.getElementById("btn2").onclick = function () {
+                console.log("btn2");
+            };
+        };
+    </script>
+    <script>
+        // JQuery 에서는 $(document).ready(function(){});
+        $(document).ready(function () {
+            $("#btn3").click(function () {
+                console.log("btn3");
+            });
+            $("#btn4").on("click",function(){
+                console.log("btn4");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn1" onclick="fnc1()">btn1</button>
+    <button id="btn2">btn2</button>
+    <button id="btn3">btn3</button>
+    <button id="btn4">btn4</button>
+    <!-- 코드와 tag의 분리가 되지 않음 -->
+    <!-- <script>
+        document.getElementById("btn2").onclick = function () {
+            console.log("btn2");
+        };
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        #box1 {
+            background-color: aqua;
+            width: 200px;
+        }
+
+        .bgColor1 {
+            background-color: red !important;
+        }
+
+        .right {
+            margin-left: 500px !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#box1").append("<p>text</p>");
+            });
+
+            $("#btn2").click(function () {
+                $(".box1").addClass("bgColor1");
+            });
+
+            $("#btn6").click(function () {
+                $(".box1").removeClass("bgColor1");
+            });
+
+            // $("#btn3").click(function () {
+            //     $("#box1").animate({
+            //         marginLeft: "500px"
+            //     });
+            // });
+            // $("#btn4").click(function () {
+            //     $("#box1").animate({
+            //         marginLeft: "0px"
+            //     });;
+            // });
+
+            $("#btn3").click(function () {
+                $("#box1").addClass("right");
+            });
+            $("#btn4").click(function () {
+                $("#box1").removeClass("right");
+            });
+
+            $("#btn5").click(function () {
+                $("#box1").slideToggle();
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="box1" class="box"></div>
+    <button id="btn1">Text</button>
+    <button id="btn2">BackColor</button>
+    <button id="btn6">BackColor</button>
+    <button id="btn4">Left</button>
+    <button id="btn3">Right</button>
+    <button id="btn5">SlideToggle</button>
+
+</body>
+
+</html>

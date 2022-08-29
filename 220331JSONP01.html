@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Ajax </title>
+	<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js></script>
+	<script>
+		$(function () {
+			var href = "http://silverstar.dothome.co.kr/member.php?callback=myFnc";
+			$.ajax({
+				url: href,
+				dataType: "jsonp"
+			}).done(function myFnc(data) {
+				if (data.length > 0) {
+					var $table = $("<table border = 1 />");
+					$.each(data, function (i, o) {
+						$id = o.id;
+						$name = o.name;
+						$email = o.email;
+
+						var trTag = $("<tr />");
+						trTag.append(
+							$("<td />").text($id),
+							$("<td />").text($name),
+							$("<td />").text($email)
+						);
+						$table.append(trTag);
+					});
+					$(".wrap").append($table);
+				}
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="wrap"></div>
+</body>
+
+</html>

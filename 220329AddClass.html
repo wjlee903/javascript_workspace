@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        h1,
+        #box1 {
+            background-color: red;
+        }
+        #box1{
+            width: 200px;
+            height: 200px;
+        }
+
+        .bgColor1 {
+            background-color: green !important; 
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $("#btn1").click(function () {
+                $("h1").addClass("bgColor1");
+            });
+
+            $("#btn2").click(function () {
+                $("h1").removeClass("bgColor1");
+            });
+
+            $("#btn3").click(function () {
+                $("#box1").addClass("bgColor1");
+            });
+
+            $("#btn4").click(function () {
+                $("#box1").removeClass("bgColor1");
+            });
+
+            $("h1").click(function () {
+                $("h1").toggleClass("bgColor1");
+            });
+
+            $("#btn5").click(function(){
+                $("#box1").toggleClass("bgColor1");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1>AddClass / RemoveClass</h1>
+    <div id="box1">div1</div>
+    <button id="btn1">btn1</button>
+    <button id="btn2">btn2</button>
+    <button id="btn3">btn3</button>
+    <button id="btn4">btn4</button>
+    <button id="btn5">btn5</button>
+</body>
+
+</html>

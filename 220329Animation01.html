@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $(".box").hide();
+            });
+            $("#btn2").click(function(){
+                $(".box").show();
+            });
+            $("#btn3").click(function(){
+                $(".box").slideUp();
+            });
+            $("#btn4").click(function(){
+                $(".box").slideDown();
+            });
+            $("#btn5").click(function(){
+                $(".box").toggle();
+            });
+            $("#btn6").click(function(){
+                $(".box").slideToggle();
+            });
+            $("#btn7").click(function(){
+                $(".box").fadeToggle();
+            });
+            $("#btn8").click(function(){
+                $(".box").fadeIn();
+            });
+            $("#btn9").click(function(){
+                $(".box").fadeOut();
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="box1" class="box" style="width: 100px; height: 100px; background-color: red;"></div>
+<div id="box2" class="box" style="width: 100px; height: 100px; background-color: blue;"></div>
+<div id="box3" class="box" style="width: 100px; height: 100px; background-color: green;"></div>
+<button id="btn1">Hide</button>
+<button id="btn2">Show</button>
+<button id="btn5">HideShowToggle</button>
+<button id="btn3">SlideUp</button>
+<button id="btn4">SlideDown</button>
+<button id="btn6">SlideToggle</button>
+<button id="btn8">FadeIn</button>
+<button id="btn9">FadeOut</button>
+<button id="btn7">FadeToggle</button>
+</body>
+
+</html>

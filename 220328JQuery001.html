@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // JQuery 시작의 pattern
+        //$(function(){});  // 약식
+        $(document).ready(function () {
+            // {} 객체, 속상, 값 -> 파라미터가 하나, 여러개 설정할때 편리
+            $("#menu li").eq(2).css({"background-color":"#ff0000", "color":"aqua"}); // index start 0
+            // 파라미터 2개 속성, 값
+            $("#menu li:nth-child(4)").css("background-color", "#00ff00"); // index start 1
+            $("h1").css("font-size","50px");
+            // 동적으로 바뀌는 부분은 JQuery로 기본은 css로
+            $("#btn1").click(function(){
+                $("h1").css("font-size", "30px");
+            })
+            $("#btn2").click(function(){
+                $("h1").css({"font-size":"50px"});
+            })
+            $(".box1").css("background-color","purple");
+        });  // 정식
+    </script>
+    <style>
+        h1{
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <input id="btn1" type="button" value="fontsizedown">
+    <input id="btn2" type="button" value="fontsizeup">
+    <input id="btn3" type="button" value="color1">
+    <input id="btn4" type="button" value="color2">
+
+    <div class="box1">content</div>
+    <div class="box2">content</div>
+    <div class="box3">content</div>
+    <div class="box4">content</div>
+
+</body>
+
+</html>

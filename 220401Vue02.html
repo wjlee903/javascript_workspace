@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        // window가 load 되면 시작 == $(document).ready(function(){});
+        window.onload = function () {
+            var app = new Vue({
+                el: "#app",
+                data:{
+                    todos: [
+                        {text: "Vue.js 튜토리얼 작성하기"},
+                        {text: "Webpack2 알아보기"},
+                        {text: "사이드 프로젝트 진행하기"}
+                    ]
+                }
+            });
+        };
+    </script>
+
+</head>
+
+<body>
+    <div id="app">
+        <h2>오늘 할 일(To Do List)</h2>
+        <ul>
+            <!-- <li v-for="todo in todos">{{ todo.text }}</li> -->
+            <li v-for="(todo, index) in todos">{{index}} {{ todo.text }}</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

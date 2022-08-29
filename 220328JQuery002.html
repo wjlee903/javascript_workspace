@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var obj = [
+                {"area":"서울"},
+                {"area":"부산"},
+                {"area":"전주"}
+            ];
+            $(obj).each(function(i, o){
+                console.log(i + ":" + o.area);
+                console.log(i + ":" + $(this)[0].area);
+                console.log($(this));
+            });
+            console.log("=====The End1=====");
+            $.each($("#menu2 li"), function(i, o){
+                console.log(i + ":" , o);
+            });          
+            console.log("=====The End2=====");
+
+            console.log($(".title1"));
+            console.log($(".title2"));
+            console.log($("#title"));
+        });
+    </script>
+</head>
+
+<body>
+    <h1 id="title">jquery</h1>
+    <h1 class="title1">JQuery</h1>
+    <h1 class="title2">jquery</h1>
+    <h1 class="title2">jquery</h1>
+    <ul id="menu1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ul id="menu2">
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+
+</body>
+
+</html>

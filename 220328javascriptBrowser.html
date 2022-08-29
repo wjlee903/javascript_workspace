@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var agent = navigator.userAgent.toLowerCase();
+        // IE 11 
+        if ((navigator.appName == 'Netscape'
+            && navigator.userAgent.search('Trident') != -1
+            // IE 10 이하
+            || (agent.indexOf("msie") != -1))) {
+            alert("IE는 지원하지 않습니다.");
+        } else if (agent.indexOf("chrome") != -1) {
+            alert("크롬입니다");
+        } else if (agent.indexOf("safari") != -1) {
+            alert("사파리입니다");
+        } else if (agent.indexOf("fireffox") != -1) {
+            alert("파이어폭스입니다");
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+        // 1.
+        var score = [{ "num": "80" }, { "num": "82" }, { "num": "90" }];
+
+        // 2.
+        $(score).each(function (i, o) {
+            console.log(i + ":", o.num);
+        });
+
+        // 3.
+        var sum = 0;
+        $(score).each(function (i, o) {
+            sum += Number(o.num);
+        })
+        console.log(sum / score.length);
+
+        // 4.
+        var korean = 50;
+        var math = 50;
+        var english = 20;
+        function avg() {
+            var score1 = [{ "num": korean }, { "num": math }, { "num": english }];
+            var sum = 0;
+            $(score1).each(function (i, o) {
+                sum += Number(o.num);
+            })
+            return console.log(sum / score1.length);
+        }
+        avg();
+
+        // 5.
+        var id = "hongkildong";
+        console.log(id.length);
+
+        // 6. 
+        var personNum = "123456-1111111";
+        console.log(personNum.substring(0, 6));
+
+        //7.
+        var tel1 = "010-1234-5678"
+        console.log(tel1.split("-")[0], tel1.split("-")[1], tel1.split("-")[2]);
+
+        // 8.
+        var tel2 = "010-1234-5678"
+        console.log(tel2.replaceAll("-", ""));
+
+        // 9.
+        function person(id, pw, name) {
+            this.id = id;
+            this.pw = pw;
+            this.name = name;
+            return console.log("id : " + id + "pw : " + pw + "name : " + name);
+        }
+        person("hkd", "1234", "kildong");
+        var person2 = {
+            "id": "lss",
+            "pw": "12345",
+            "name": "sunsin"
+        };
+        console.log(person2.id, person2.pw, person2.name);
+
+        // 11.
+        var nowDate = new Date();
+        var hour = nowDate.getHours();
+        //document.write(hour);
+        function urlgo() {
+            if (hour >= 19) {
+                location.href = "https://google.com";
+            } else {
+                location.href = "https://naver.com";
+            }
+        }
+
+        // 12.
+        function urlSearch() {
+            var key = document.getElementById("textSearch").value;
+            location.href = "https://book.naver.com/search/search.naver?sm=sta_hty.book&sug=&where=nexearch&query="+key;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick="urlgo()" value="19시 전후">
+
+    검색어 <input type="text" value="자바" id="textSearch">
+    <input id="btn1" type="button" onclick="urlSearch()" value="검색">
+</body>
+
+</html>

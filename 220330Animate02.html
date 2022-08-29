@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").on("click", function () {
+                $("#txt1").animate({ marginLeft: "200px" }, 5000)
+                    .animate({ marginTop: "200px" }, 5000)
+                    .animate({ marginLeft: 0 }, 5000)
+                    .animate({ marginTop: 0 }, 5000);
+            })
+
+            $("#btn2").click(function(){
+                $("#txt1").stop(true,true); // clearQue: 저장 애니메이션 삭제
+            });                             // finish: 마지막 프레임으로
+            $("#btn3").click(function(){
+                $("#txt1").stop(true,false); // clearQue / finish
+            });
+            $("#btn4").click(function(){
+                $("#txt1").stop(false,true); // clearQue / finish
+            });
+            $("#btn5").click(function(){ 
+                $("#txt1").stop(false,false); // dafault clearQue / finish
+            });
+            
+
+
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #txt1 {
+            width: 60px;
+            text-align: center;
+            background-color: silver;
+        }
+    </style>
+</head>
+
+<body>
+    <p><button id="btn1">button1</button></p>
+    <button id="btn2">stop(true,true)</button>
+    <button id="btn3">stop(true,false)</button>
+    <button id="btn4">stop(false,true)</button>
+    <button id="btn5">stop(false,false)</button>
+    <p id="txt1">텍스트1</p>
+    
+</body>
+
+</html>

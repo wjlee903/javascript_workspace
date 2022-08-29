@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // = {} 중괄호는 객체생성
+        var hkd = { name: "홍길동", dept: "컴퓨터공학과", address: "서울" };
+        document.write(hkd.name, "<br>");
+        document.write(hkd.dept, "<br>");
+
+        // 최근 많이 쓰는 방법 
+        // 함수명도 지정할수 있다.
+        var lss = {
+            name: "이순신",
+            showInfo: function () {
+                document.write(lss.name);
+            }
+        }
+        lss.showInfo();
+
+        function setter(name, age, school) {
+            var setName = name;
+            var setAge = age;
+            var setSchool = school;
+            return "name is : " + setName + "age is : " + setAge + "school is : " + setSchool;
+        }
+        console.log(setter("Mike", "13", "seoul"));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var site = prompt("검색사이트 입력", "");
+        var keyword = prompt("검색어 입력", "");
+
+        switch (site) {
+            case "구글": url = "https://www.google.com/search?q=" + keyword;
+                break;
+            case "네이버": url = "https://search.naver.com/search.naver?&query=" + keyword;
+                break;
+            default: alert("구글과 네이버 중 선택");
+        }
+        if (site) {
+            location.href = url;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

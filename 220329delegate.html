@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#box1").append("<button>버튼1</button>");
+            });
+            // 추천
+            $("#box1").delegate("button", "click", function(){
+                console.log("btn click");
+            });
+            // 비추천
+            // $("#box1").on("click","button",function(){
+            //     console.log("click");
+            // });
+            $("#btn2").click(function(){
+                $("#list1").append("<li>item</li>");
+            });
+            $("#list1").delegate("li", "click", function(){
+                console.log("click");
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="box1">
+
+</div>
+<button id="btn1">btn1</button>
+<ul id="list1">
+
+</ul>
+<button id="btn2">btn2</button>
+</body>
+
+</html>

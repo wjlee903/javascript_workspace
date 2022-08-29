@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://silverstar.dothome.co.kr/ajaxDB3.php",
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        var tb = $("<table border=1 />");
+                        $.each(data, function (i, o) {
+                            var id = o.id;
+                            var name = o.name;
+                            var email = o.email;
+
+                            var row = $("<tr />").append(
+                                $("<td />").text(id),
+                                $("<td />").text(name),
+                                $("<td />").text(email)
+                            );
+                            tb.append(row);
+                        });
+                        $(".wrap").append(tb);
+                    }
+                }
+            });
+
+            $("#btn1").click(function () {
+                var search_id = $("#text_id").val();
+                console.log(search_id);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="search_box">
+        <form action="http://silverstar.dothome.co.kr/ajaxDB3.php" method="get">
+            <select name="catgo">
+                <option value="id">id</option>
+                <option value="name">name</option>
+                <option value="email">email</option>
+            </select>
+        </form>
+    </div>
+    <input type="text" name="id" id="text_id">
+    <input type="submit" value="search" id="btn1">
+    <div class="wrap"></div>
+</body>
+
+</html>
